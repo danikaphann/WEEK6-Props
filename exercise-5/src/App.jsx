@@ -1,18 +1,19 @@
 import React from 'react';
-import { AVAILABLE_ITEM } from './data.js';
+import {AVAILABLE_ITEMS} from './data.js';
 import "./index.css";
 
 
-function  Item({ item }) {
+function Item( item ) {
   return (
-    <div className = "card">
+    <div className="card">
       <h4>{item.name}</h4>
       <small>{item.occupation}</small>
       <p>{item.description}</p>
       <img src={item.image.src} alt={item.image.alt} />
-     </div>
+    </div>
   );
 }
+
 
 function App() {
   return <>
@@ -24,8 +25,8 @@ function App() {
     <main>
       <div className="card-view">
         <div className="cards-grid">
-        {AVAILABLE_ITEM.map((item) => (
-              <Item key={item.id} item={item} />
+        {AVAILABLE_ITEMS.map((item) => (
+              <Item key={item.id} {...item} />
         ))}
         </div>
       </div>
